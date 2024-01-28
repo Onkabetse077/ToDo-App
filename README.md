@@ -30,3 +30,49 @@ Now, you will work on opening and closing the form modal.
 Add a click event listener to the openTaskFormBtn variable, and then use classList to toggle the hidden class on the taskForm element. Make sure not to include curly braces in your arrow function.
 
 Now you can click on the "Add new Task" button and see the form modal.
+
+//Step 7
+Add a click event listener to the closeTaskFormBtn variable, then use the showModal() method on your confirmCloseDialog variable. This will display a modal with the Discard and Cancel buttons.
+
+showModal() is a method associated with the HTML dialog element. It is used to display a modal dialog box on a web page.
+
+//Step 8
+If the user clicks the Cancel button, you want to cancel the process (close the modal showing the two buttons) so the user can continue editing.
+
+Add a click event listener to the cancelBtn element, then use the close() method on the confirmCloseDialog variable.
+
+close() is a method of the window object you can use to close the current window, or a modal you create with the dialog element.
+
+//Step 9
+If the user clicks the Discard button, you want to close the modal showing the Cancel and Discard buttons, then hide the form modal.
+
+Add a click event listener to discardBtn, then use the close() method on the confirmCloseDialog variable. Also, use classList to toggle the class hidden on taskForm so the form modal will close too.
+
+//Step 10
+Now that you've worked on opening and closing the modal, it's time to get the values from the input fields, save them into the taskData array, and display them on the page.
+
+To start, add a submit event listener to your taskForm element and pass in e as the parameter of your arrow function. Inside the curly braces, use the preventDefault() method to stop the browser from refreshing the page after submitting the form.
+
+//Step 11
+You need to determine whether the task being added already exists or not. If it doesn't exist, you will add it, and if it already exists, you will set it up for editing. You can use the findIndex() method to accomplish this.
+
+findIndex is an array method that lets find the index of the first element in an array that satisfies a given testing function.
+
+Here's an example:
+
+const numbers = [3, 1, 5, 6, 10, 9, 8];
+const firstEvenNumIndex = numbers.findIndex((num) => num % 2 === 0);
+
+console.log(firstEvenNumIndex); // Output: 3 – because the first even number (6) is at index 3
+Declare a dataArrIndex variable using const and set it to the result of the findIndex() method applied to the taskData array. Utilize arrow syntax to provide a callback function with item as the parameter, and within the callback, check if the id property of item is equal to the id property of currentTask.
+
+If the task exists, this returns the index, and if it doesn't exist, it returns -1.
+
+//Step 12
+Next, retrieve the values from the input fields and store them in a taskObj object. Each task should also have a unique id.
+
+Create a taskObj object with an id property as the first property. For the value of the id property, retrieve the value of the titleInput field, convert it to lowercase, and then use the split() and join() methods to hyphenate it.
+
+Make sure all of those are in template literals because you need the id property value as a string.
+
+//
