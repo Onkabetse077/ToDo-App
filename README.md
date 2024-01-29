@@ -75,4 +75,12 @@ Create a taskObj object with an id property as the first property. For the value
 
 Make sure all of those are in template literals because you need the id property value as a string.
 
-//
+//Step 13
+To make the id more unique, add another hyphen and use Date.now().
+
+Date.now() returns the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC.
+
+console.log(Date.now()); // 1628586800000
+
+//Step 14
+Retrieve the values from the titleInput, dateInput, and descriptionInput fields, and then save them in the properties title, date, and description of the taskObj object.
